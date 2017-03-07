@@ -8,12 +8,10 @@
 Module.register('MMM-bergfex', {
 
   defaults: {
-    updateInterval: 10000,
+    updateInterval: 20 * 1000,
     animationSpeed: 0,
 	header: 'Bergfex.at',
-	tempUnit: 'celsius',          // 'celsius' or 'fahrenheit'
-	dht22gpio: 22,
-	dht22util: 'sudo /home/pi/bin/dht22'
+	skiarea: 'Gerlos - Zillertal Arena'
   },
 
     getStyles: function () {
@@ -24,19 +22,25 @@ Module.register('MMM-bergfex', {
   start: function() {
     Log.log('Starting module: ' + this.name);
     this.stats = {};
-    this.stats.celsius = 'reading ...';
-    this.stats.fahrenheit = 'reading ...';
-    this.stats.humidity = 'reading ...';
+	this.stats.skiarea = '-';
+	this.stats.tal = '-';
+	this.stats.berg = '-';
+	this.stats.neu = '-';
+	this.stats.lifte = '-';
+	this.stats.update = '-';
     this.sendSocketNotification('CONFIG', this.config);
   },
 
   socketNotificationReceived: function(notification, payload) {
-    //Log.log('MMM-dht22: socketNotificationReceived ' + notification);
-    //Log.log(payload);
-    if (notification === 'STATS') {
-	  this.stats.celsius = payload.celsius + '°C';
-	  this.stats.fahrenheit = payload.fahrenheit + '°F';
-	  this.stats.humidity = payload.humidity + '%';	  
+    Log.log('MMM-bergfex: socketNotificationReceived ' + notification);
+    Log.log(payload);
+    if (notification === 'SNOW_REPORT') {
+	  this.stats.skiarea = payload.skiarea;
+	  this.stats.tal = payload.tal;
+	  this.stats.berg = payload.berg;
+	  this.stats.neu = payload.neu;
+	  this.stats.lifte = payload.lifte;
+	  this.stats.update = payload.update;
       this.updateDom(this.config.animationSpeed);
     }
   },
@@ -54,16 +58,18 @@ Module.register('MMM-bergfex', {
     var table = document.createElement('table');
     table.classList.add("small", "table");
 
-    table.innerHTML = '<tr>' +
-							'<td class="normal">Temperature: </td>' +
-							'<td class="bright">' +
-								((this.config.tempUnit == 'fahrenheit') ? this.stats.fahrenheit : this.stats.celsius) + 					
-							'</td>' + 
-						'</tr><tr>' +  
-							'<td class="normal">Humidity: </td>' +
-							'<td class="bright">' + this.stats.humidity + '</td>' +
-                        '</tr>';
-    
+	var str = "<tr><td>Gebiet</td><td>Tal</td><td>Berg</td><td>Neu</td><td>Lifte</td></tr>";
+    str += '<tr>';
+	str +=  	'<td>' + this.stats.skiarea + '</td>';
+    //str += '</tr>';
+    //str += '<tr>';
+	str +=  	'<td >' + this.stats.tal + '</td>';
+	str +=  	'<td >' + this.stats.berg + '</td>';
+	str +=  	'<td >' + this.stats.neu + '</td>';
+	str +=  	'<td >' + this.stats.lifte + '</td>';
+    str += '</tr>';
+    table.innerHTML = str;
+	
 	wrapper.appendChild(table);
 	return wrapper;
   },

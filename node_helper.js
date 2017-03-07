@@ -16,20 +16,17 @@ const cheerio = require("cheerio");
 
 // Constants
 const URL = "http://www.bergfex.at/oesterreich/schneewerte/";
-const AREA = "Gerlos - Zillertal Arena";
-
-var snow_reports = [];
 
 module.exports = NodeHelper.create({
+
   start: function() {
     console.log('Starting node helper: ' + this.name);
   },
 
   // Subclass socketNotificationReceived received.
   socketNotificationReceived: function(notification, payload) {
-    var self = this;
-
     if (notification === 'CONFIG') {
+	  var self = this;
       this.config = payload;
       setInterval(function() {
         self.getStats();
@@ -38,58 +35,50 @@ module.exports = NodeHelper.create({
   },
 
   getStats: function() {
-    var self = this;
-	
+	  var self = this;
+	  console.log('getStats()');
 	retrieveData();
-	var a1 = searchData(AREA);
-	self.sendSocketNotification('STATS',snow_reports);
 	
-	/*var path = this.config.dht22Util + " ";
+	//var a1 = searchData(this.config.snow_reports, this.config.skiarea);
+	
+	var a1 = { 
+			skiarea: 'Gosau - Dachstein West',
+			tal: '80 cm',
+			berg: '100 cm',
+			neu: '10 cm',
+			lifte: '32/32',
+			update: 'Heute, 08:13' 
+	};
 
-    async.parallel([
-      //async.apply(exec, 'sudo /home/pi/bin/dht22 c 22'),
-      //async.apply(exec, 'sudo /home/pi/bin/dht22 f 22'),
-      //async.apply(exec, 'sudo /home/pi/bin/dht22 h 22'),
-      async.apply(exec, this.config.dht22util + ' c ' + this.config.dht22gpio),
-      async.apply(exec, this.config.dht22util + ' f ' + this.config.dht22gpio),
-      async.apply(exec, this.config.dht22util + ' h ' + this.config.dht22gpio)
-    ],
-    function (err, res) {
-      var stats = {};
-	  stats.celsius = res[0][0];
-	  stats.fahrenheit = res[1][0];
-	  stats.humidity = res[2][0];
-      //console.log(stats);
-      self.sendSocketNotification('STATS', stats);
-    });*/
-  },
+	self.sendSocketNotification('SNOW_REPORT', a1);
+  }
+
 
 });
 
 function retrieveData() {
+	console.log('retrieveData()');
 	request(URL, function (err, response, html) {
 		let $ = cheerio.load(html), pageData = {};
 		var data = [];
 		var tbody = $('.content').children().last();
 		
 		tbody.children().each(function() {
-			entry = parseEntry($(this));
+			var entry = parseEntry($(this));
 			data.push(entry);
 		});
 		
-		//console.log(data.length + " snow reports from bergfex.at retrieved.");
-		snow_reports = data;
-		//console.log("forecasts after: ");
-		//console.log(forecasts);
-		
-		var a1 = searchData(AREA);
-		console.log(a1);
+		console.log(data.length + " snow reports from bergfex.at retrieved.");
+		//this.config.snow_reports = data;
+		//console.log(data);
+		//var a = searchData(data, 'Gerlos - Zillertal Arena');
+		//console.log(a);
 	});
 }
 
-function searchData(area) {
-	for (i=0; i<snow_reports.length; i++) {
-		if (snow_reports[i].skigebiet === area) {
+function searchData(snow_reports, skiarea) {
+	for (var i=0; i<snow_reports.length; i++) {
+		if (snow_reports[i].skiarea === skiarea) {
 			return snow_reports[i];
 		}
 	}
@@ -97,7 +86,7 @@ function searchData(area) {
 }
 
 function parseEntry(row) {
-	var entry = {skigebiet: "", tal: "", berg: "", neu: "", lifte: ""};
+	var entry = {skiarea: "", tal: "", berg: "", neu: "", lifte: ""};
 	
 	var td1 = row.children().first();
 	var td2 = td1.next();
@@ -107,7 +96,7 @@ function parseEntry(row) {
 	var td6 = td5.next();
 	var td7 = td6.next();
 	
-	entry.skigebiet = td1.text().trim();
+	entry.skiarea = td1.text().trim();
 	entry.tal = td2.text().trim();
 	entry.berg = td3.text().trim();
 	entry.neu = td4.text().trim();

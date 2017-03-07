@@ -1,6 +1,5 @@
 {
   "name": "MMM-bergfex",
-  "version": "0.1",
   "description": "Displays Bergfex.at Snow Reports",
   "repository": {
     "type": "git",
@@ -18,6 +17,10 @@
   "bugs": {
     "url": "https://github.com/nebulx29/MMM-bergfex/issues"
   },
-  "homepage": "https://github.com/nebulx29/MMM-bergfex"
+  "homepage": "https://github.com/nebulx29/MMM-bergfex",
+  "dependencies": {
+    "request": "latest",
+	"cheerio": "latest"
+  }
 
 }
