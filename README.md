@@ -43,7 +43,7 @@ The following properties can be configured:
 
 |Option|Description|Values|Default|
 |---|---|---|---|
-|updateInterval|The update interval. Determines the refresh rate in ms at which sensor is read.<br>**Example:** `updateInterval: 10000`|int|30*60*1000ms = 30min|
+|updateInterval|The update interval. Determines the refresh rate in ms at which sensor is read.<br>**Example:** `updateInterval: 10000`|int|`30*60*1000`ms = 30min|
 |animationSpeed|Speed of animation when updates occur.<br>**Example:** `animationSpeed: 0`|int|0|
 |header|The name that should be displayed at the top of the module<br>**Example:** `header: 'bergfex.at'`|String|'bergfex.at'|
 |skiareas|This is an array with strings of the skiareas to display. String must exactly match the name on http://www.bergfex.at/oesterreich/schneewerte/<br>|array of strings|''|
