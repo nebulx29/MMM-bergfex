@@ -26,55 +26,48 @@ module.exports = NodeHelper.create({
   // Subclass socketNotificationReceived received.
   socketNotificationReceived: function(notification, payload) {
     if (notification === 'CONFIG') {
-	  var self = this;
-      this.config = payload;
-      setInterval(function() {
-        self.getStats();
-      }, this.config.updateInterval);
+		var self = this;
+		this.config = payload;
+		setInterval(function() {
+			self.retrieveAndUpdate();
+		}, this.config.updateInterval);
     }
   },
 
-  getStats: function() {
-	  var self = this;
-	  console.log('getStats()');
-	retrieveData();
-	
-	//var a1 = searchData(this.config.snow_reports, this.config.skiarea);
-	
-	var a1 = { 
-			skiarea: 'Gosau - Dachstein West',
-			tal: '80 cm',
-			berg: '100 cm',
-			neu: '10 cm',
-			lifte: '32/32',
-			update: 'Heute, 08:13' 
-	};
+  retrieveAndUpdate: function() {
+	var self = this;
+	console.log('retrieveAndUpdate()');
 
-	self.sendSocketNotification('SNOW_REPORT', a1);
+	request(URL, function (err, response, html) {
+		let $ = cheerio.load(html);
+		var allSnowReports = [];
+		var tbody = $('.content').children().last();
+		
+		tbody.children().each(function() {
+			var entry = parseEntry($(this));
+			allSnowReports.push(entry);
+		});
+		
+		console.log(allSnowReports.length + " snow reports from bergfex.at retrieved.");
+		var selSnowReports = [];
+		for (var i=0; i<self.config.skiareas.length; i++) {
+			console.log("searching for " + self.config.skiareas[i]);
+			selSnowReports.push(searchData(allSnowReports, self.config.skiareas[i]));
+		}
+		/*selSnowReports.push(searchData(allSnowReports, 'Hauser Kaibling / Schladming - Ski amade'));
+		selSnowReports.push(searchData(allSnowReports, 'Hochkar'));
+		selSnowReports.push(searchData(allSnowReports, 'Hinterstoder - Höss'));
+		selSnowReports.push(searchData(allSnowReports, 'Hochkönig / Maria Alm - Dienten - Mühlbach - Ski amade'));*/
+		console.log(selSnowReports);
+		
+		self.sendSocketNotification('SNOW_REPORT', selSnowReports);
+	});
+	
   }
 
 
 });
 
-function retrieveData() {
-	console.log('retrieveData()');
-	request(URL, function (err, response, html) {
-		let $ = cheerio.load(html), pageData = {};
-		var data = [];
-		var tbody = $('.content').children().last();
-		
-		tbody.children().each(function() {
-			var entry = parseEntry($(this));
-			data.push(entry);
-		});
-		
-		console.log(data.length + " snow reports from bergfex.at retrieved.");
-		//this.config.snow_reports = data;
-		//console.log(data);
-		//var a = searchData(data, 'Gerlos - Zillertal Arena');
-		//console.log(a);
-	});
-}
 
 function searchData(snow_reports, skiarea) {
 	for (var i=0; i<snow_reports.length; i++) {
@@ -104,4 +97,33 @@ function parseEntry(row) {
 	entry.update = td7.text().trim();
 	
 	return entry;
+}
+
+function testData() {
+	return [
+			{ 
+				skiarea: 'Gosau - Dachstein West',
+				tal: '80 cm',
+				berg: '100 cm',
+				neu: '10 cm',
+				lifte: '32/32',
+				update: 'Heute, 08:13' 
+			},
+			{ 
+				skiarea: 'Gerlos - Zillertal',
+				tal: '40 cm',
+				berg: '70 cm',
+				neu: '15 cm',
+				lifte: '11/11',
+				update: 'Heute, 08:10' 
+			},
+			{ 
+				skiarea: 'Hauser Kaibling',
+				tal: '85 cm',
+				berg: '70 cm',
+				neu: '20 cm',
+				lifte: '16/17',
+				update: 'Heute, 07:13' 
+			},
+	];
 }
