@@ -10,7 +10,7 @@ bergfex.at snow reports Austria retrieved from http://www.bergfex.at/oesterreich
 
 To use this module, clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/nebulx29/MMM-bergfex`
 
-Goto 'MMM-bergfex' module directory and run 'npm install'
+Goto `MMM-bergfex` module directory and run `npm install cheerio` and `npm install`
 
 
 ### Configuration
