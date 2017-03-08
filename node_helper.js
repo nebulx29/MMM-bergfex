@@ -54,17 +54,12 @@ module.exports = NodeHelper.create({
 			console.log("searching for " + self.config.skiareas[i]);
 			selSnowReports.push(searchData(allSnowReports, self.config.skiareas[i]));
 		}
-		/*selSnowReports.push(searchData(allSnowReports, 'Hauser Kaibling / Schladming - Ski amade'));
-		selSnowReports.push(searchData(allSnowReports, 'Hochkar'));
-		selSnowReports.push(searchData(allSnowReports, 'Hinterstoder - Höss'));
-		selSnowReports.push(searchData(allSnowReports, 'Hochkönig / Maria Alm - Dienten - Mühlbach - Ski amade'));*/
 		console.log(selSnowReports);
 		
 		self.sendSocketNotification('SNOW_REPORT', selSnowReports);
 	});
 	
   }
-
 
 });
 
