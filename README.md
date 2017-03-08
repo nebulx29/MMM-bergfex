@@ -1,5 +1,5 @@
 # MMM-bergfex.at
-bergfex.at snow reports Austria
+bergfex.at snow reports Austria retrieved from http://www.bergfex.at/oesterreich/schneewerte/
 
 ### Prerequisites
 
