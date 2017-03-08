@@ -28,6 +28,7 @@ module.exports = NodeHelper.create({
     if (notification === 'CONFIG') {
 		var self = this;
 		this.config = payload;
+		self.retrieveAndUpdate();
 		setInterval(function() {
 			self.retrieveAndUpdate();
 		}, this.config.updateInterval);
