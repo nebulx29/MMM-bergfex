@@ -48,4 +48,6 @@ The following properties can be configured:
 |header|The name that should be displayed at the top of the module<br>**Example:** `header: 'bergfex.at'`|String|'bergfex.at'|
 |skiareas|This is an array with strings of the skiareas to display. String must exactly match the name on http://www.bergfex.at/oesterreich/schneewerte/<br>|array of strings|''|
 |shortenArea|number of characters skiarea names will be shortened to.<br>**Example:** `shortenArea: 20`|int|20|
+|cssclassheader|CSS class for the table header (bright, normal, etc).<br>**Example:** `cssclassheader: normal`|String|'normal'|
+|cssclassrow|CSS class for the table rows (normal, light, etc).<br>**Example:** `cssclassrow: light`|String|'light'|
 
