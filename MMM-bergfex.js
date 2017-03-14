@@ -15,7 +15,8 @@ Module.register('MMM-bergfex', {
 			'Hauser Kaibling / Schladming - Ski amade',
 			'Hochkar',
 		],
-	shortenArea: 20
+	shortenArea: 20,
+	cssclass: 'light'
   },
 
     getStyles: function () {
@@ -60,11 +61,11 @@ Module.register('MMM-bergfex', {
 	var str = "<tr><td>Gebiet</td><td>Tal</td><td>Berg</td><td>Neu</td><td>Lifte</td></tr>";
 	for (var i=0; i<this.snowreports.length; i++) {
 		str += '<tr>';
-		str +=  	'<td class="light">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '...</td>';
-		str +=  	'<td class="light">' + this.snowreports[i].tal + '</td>';
-		str +=  	'<td class="light">' + this.snowreports[i].berg + '</td>';
-		str +=  	'<td class="light">' + this.snowreports[i].neu + '</td>';
-		str +=  	'<td class="light">' + this.snowreports[i].lifte + '</td>';
+		str +=  	'<td class="' + this.config.cssclass + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '...</td>';
+		str +=  	'<td class="' + this.config.cssclass + '">' + this.snowreports[i].tal + '</td>';
+		str +=  	'<td class="' + this.config.cssclass + '">' + this.snowreports[i].berg + '</td>';
+		str +=  	'<td class="' + this.config.cssclass + '">' + this.snowreports[i].neu + '</td>';
+		str +=  	'<td class="' + this.config.cssclass + '">' + this.snowreports[i].lifte + '</td>';
 		str += '</tr>';
 	}
     table.innerHTML = str;
