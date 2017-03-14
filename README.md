@@ -34,7 +34,9 @@ The module needs the default configuration block in your config.js to work.
 						'Klippitztörl',
 						'Koralpe'
 					],
-				shortenArea: 20
+				shortenArea: 20,
+				cssclassrow: 'normal',
+				cssclassheader: 'bright'				
 			}
 		},
 ```
