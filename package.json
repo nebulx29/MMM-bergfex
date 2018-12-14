@@ -20,7 +20,7 @@
   "homepage": "https://github.com/nebulx29/MMM-bergfex",
   "dependencies": {
     "request": "latest",
-	"cheerio": "latest"
+    "cheerio": "latest"
   }
 
 }
