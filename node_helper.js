@@ -42,7 +42,7 @@ module.exports = NodeHelper.create({
 	request(URL, function (err, response, html) {
 		let $ = cheerio.load(html);
 		var allSnowReports = [];
-		var tbody = $('.content').children().last();
+		var tbody = $('.content').children().first().children().first().children().last().children().last();
 		
 		tbody.children().each(function() {
 			var entry = parseEntry($(this));
