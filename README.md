@@ -18,27 +18,25 @@ Goto `MMM-bergfex` module directory and run `npm install cheerio` and `npm insta
 The module needs the default configuration block in your config.js to work.
 
 ```
-		{
-			module: 'MMM-bergfex',
-			position: 'top_right', 
-			classes: 'small dimmed', 
-			config: {
-			    updateInterval: 30*60*1000,
-			    animationSpeed: 0,
-			    header: 'bergfex.at Snow Report',
-				skiareas: [
-						'Gerlos - Zillertal Arena',
-						'Hauser Kaibling / Schladming - Ski amade',
-						'Hochkar',
-						'Hochkönig / Maria Alm - Dienten - Mühlbach - Ski amade',
-						'Klippitztörl',
-						'Koralpe'
-					],
-				shortenArea: 20,
-				cssclassrow: 'normal',
-				cssclassheader: 'bright'				
-			}
-		},
+{
+	module: 'MMM-bergfex',
+	position: 'top_right', 
+	classes: 'small dimmed', 
+	config: {
+		updateInterval: 30*60*1000,
+		animationSpeed: 0,
+		header: 'bergfex.at Snow Report',
+		skiareas: [
+			'Gerlos - Zillertal Arena',
+			'Hauser Kaibling / Schladming - Ski amade',
+			'Hochkar',
+			'Koralpe'
+		],
+		shortenArea: 20,
+		cssclassrow: 'normal',
+		cssclassheader: 'bright'				
+	}
+},
 ```
 
 The following properties can be configured:
