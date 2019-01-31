@@ -27,8 +27,6 @@ The module needs the default configuration block in your config.js to work.
 		animationSpeed: 0,
 		header: 'bergfex.at Snow Report',
 		skiareas: [
-			'Gerlos - Zillertal Arena',
-			'Hauser Kaibling / Schladming - Ski amade',
 			'Hochkar',
 			'Koralpe'
 		],
