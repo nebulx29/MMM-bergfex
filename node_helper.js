@@ -42,20 +42,26 @@ module.exports = NodeHelper.create({
 	request(URL, function (err, response, html) {
 		let $ = cheerio.load(html);
 		var allSnowReports = [];
-		var tbody = $('.content').children().first().children().first().children().last().children().last();
+		var tbody = $('tr.tr0'); 
 		
-		tbody.children().each(function() {
+		tbody.each(function() {
 			var entry = parseEntry($(this));
 			allSnowReports.push(entry);
 		});
+		tbody = $('tr.tr1'); 
 		
+		tbody.each(function() {
+			var entry = parseEntry($(this));
+			allSnowReports.push(entry);
+		});
+
 		console.log(allSnowReports.length + " snow reports from bergfex.at retrieved.");
 		var selSnowReports = [];
 		for (var i=0; i<self.config.skiareas.length; i++) {
 			console.log("searching for " + self.config.skiareas[i]);
 			selSnowReports.push(searchData(allSnowReports, self.config.skiareas[i]));
 		}
-		//console.log(selSnowReports);
+		console.log(selSnowReports);
 		
 		self.sendSocketNotification('SNOW_REPORT', selSnowReports);
 	});
