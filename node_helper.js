@@ -8,7 +8,7 @@
  */
 
 const NodeHelper = require('node_helper');
-var async = require('async');
+// var async = require('async');
 var sys = require('sys');
 var exec = require('child_process').exec;
 const request = require('request');
@@ -26,7 +26,7 @@ module.exports = NodeHelper.create({
 
   // Subclass socketNotificationReceived received.
   socketNotificationReceived: function(notification, payload) {
-	  Log.log("Notification: "+notification);
+	console.log("Notification: "+notification);
     if (notification === 'CONFIG') {
 		var self = this;
 		this.config = payload;
