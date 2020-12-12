@@ -7,7 +7,7 @@
  * Apache 2.0 Licensed.
  */
 
-const NodeHelper = require('node_helper');
+const NodeHelper = require("node_helper");
 // var async = require('async');
 var sys = require('sys');
 var exec = require('child_process').exec;
