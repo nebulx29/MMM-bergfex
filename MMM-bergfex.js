@@ -12,6 +12,7 @@ Module.register('MMM-bergfex', {
     animationSpeed: 0,
 	header: 'Bergfex.at',
 	skiareas: [
+		'Lachtal'
 			// 'Hauser Kaibling / Schladming - Ski amade',
 			// 'Hochkar',
 		],
