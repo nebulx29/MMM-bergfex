@@ -37,7 +37,11 @@ Module.register('MMM-bergfex', {
 				lifte: '',
 				update: '' 
 	}];
-    this.sendSocketNotification('CONFIG', this.config);
+    this.getSnowData();
+  },
+
+  getSnowData: function(){
+	this.sendSocketNotification('CONFIG', this.config);
   },
 
   socketNotificationReceived: function(notification, payload) {
