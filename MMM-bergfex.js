@@ -41,6 +41,7 @@ Module.register('MMM-bergfex', {
   },
 
   getSnowData: function(){
+	Log.log("Triggering notification...");
 	this.sendSocketNotification('CONFIG', this.config);
   },
 
