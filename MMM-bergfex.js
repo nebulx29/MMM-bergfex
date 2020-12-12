@@ -29,12 +29,12 @@ Module.register('MMM-bergfex', {
   start: function() {
     Log.log('Starting module: ' + this.name);
 	this.snowreports = [{
-				skiarea: 'loading...',
-				tal: '',
-				berg: '',
-				neu: '',
-				lifte: '',
-				update: '' 
+				// skiarea: 'loading...',
+				// tal: '',
+				// berg: '',
+				// neu: '',
+				// lifte: '',
+				// update: '' 
 	}];
     this.sendSocketNotification('CONFIG', this.config);
   },
