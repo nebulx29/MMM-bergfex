@@ -12,8 +12,8 @@ Module.register('MMM-bergfex', {
     animationSpeed: 0,
 	header: 'Bergfex.at',
 	skiareas: [
-			'Hauser Kaibling / Schladming - Ski amade',
-			'Hochkar',
+			// 'Hauser Kaibling / Schladming - Ski amade',
+			// 'Hochkar',
 		],
 	shortenArea: 20,
 	cssclassrow: 'light',
