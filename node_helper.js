@@ -15,7 +15,8 @@ const request = require('request');
 const cheerio = require("cheerio");
 
 // Constants
-const URL = "http://www.bergfex.at/oesterreich/schneewerte/";
+// const URL = "http://www.bergfex.at/oesterreich/schneewerte/";
+// const URL = "http://www.bergfex.at/"+this.config.region+"/schneewerte"; 
 
 module.exports = NodeHelper.create({
 
@@ -38,6 +39,9 @@ module.exports = NodeHelper.create({
   retrieveAndUpdate: function() {
 	var self = this;
 	console.log('retrieveAndUpdate()');
+
+	// assemble URL 
+	const URL = "http://www.bergfex.at/"+self.config.region+"/schneewerte"; 
 
 	request(URL, function (err, response, html) {
 		let $ = cheerio.load(html);
