@@ -2,6 +2,8 @@
 bergfex.at snow reports retrieved from http://www.bergfex.at/oesterreich/schneewerte/. 
 Available countries are listed on Bergfex.at
 
+![Screenshot](screenshot.png?raw=true "Bergfex.at Results Screenshot")
+
 ### Download and Installation 
 
 To use this module, clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/FatTony123/MMM-bergfex.git`
