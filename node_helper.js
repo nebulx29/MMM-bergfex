@@ -39,11 +39,11 @@ module.exports = NodeHelper.create({
 
   retrieveAndUpdate: function() {
 	var self = this;
-	console.log('retrieveAndUpdate()');
+	// console.log('retrieveAndUpdate()');
 
 	// assemble URL 
 	const URL = "http://www.bergfex.at/"+self.config.region+"/schneewerte"; 
-	console.log(URL);
+	console.log("URL: "+URL);
 
 	request(URL, function (err, response, html) {
 		let $ = cheerio.load(html);
