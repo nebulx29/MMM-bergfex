@@ -1,5 +1,6 @@
 # MMM-bergfex.at
-bergfex.at snow reports Austria retrieved from http://www.bergfex.at/oesterreich/schneewerte/
+bergfex.at snow reports retrieved from http://www.bergfex.at/oesterreich/schneewerte/. 
+Available countries are listed on Bergfex.at (https://www.bergfex.at/oesterreich/schneewerte/)
 
 ### Prerequisites
 
@@ -8,7 +9,7 @@ bergfex.at snow reports Austria retrieved from http://www.bergfex.at/oesterreich
 
 ### Download and Installation 
 
-To use this module, clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/nebulx29/MMM-bergfex`
+To use this module, clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/FatTony123/MMM-bergfex.git`
 
 Goto `MMM-bergfex` module directory and run `npm install cheerio` and `npm install`
 
