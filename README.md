@@ -1,11 +1,6 @@
 # MMM-bergfex.at
 bergfex.at snow reports retrieved from http://www.bergfex.at/oesterreich/schneewerte/. 
-Available countries are listed on Bergfex.at (https://www.bergfex.at/oesterreich/schneewerte/)
-
-### Prerequisites
-
-- tested only on MagicMirror v2.0.0
-
+Available countries are listed on Bergfex.at
 
 ### Download and Installation 
 
