@@ -64,7 +64,7 @@ Module.register('MMM-bergfex', {
 	var str = "<tr class='" + this.config.cssclassheader + "'><th>Gebiet</th><th>Tal</th><th>Berg</th><th>Neu</th><th>Lifte</th></tr>";
 	for (var i=0; i<this.snowreports.length; i++) {
 		str += '<tr>';
-		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '...</td>';
+		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '</td>';
 		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].tal + '</td>';
 		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].berg + '</td>';
 		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].neu + '</td>';
