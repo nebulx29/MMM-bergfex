@@ -41,7 +41,7 @@ Module.register('MMM-bergfex', {
   },
 
   socketNotificationReceived: function(notification, payload) {
-    Log.log('MMM-bergfex: socketNotificationReceived ' + notification);
+    // Log.log('MMM-bergfex: socketNotificationReceived ' + notification);
     //Log.log(payload);
     if (notification === 'SNOW_REPORT') {
 		this.snowreports = payload;
