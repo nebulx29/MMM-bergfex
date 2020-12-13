@@ -26,7 +26,6 @@ module.exports = NodeHelper.create({
 
   // Subclass socketNotificationReceived received.
   socketNotificationReceived: function(notification, payload) {
-	console.log("Notification: "+notification);
     if (notification === 'CONFIG') {
 		var self = this;
 		this.config = payload;
@@ -39,11 +38,9 @@ module.exports = NodeHelper.create({
 
   retrieveAndUpdate: function() {
 	var self = this;
-	// console.log('retrieveAndUpdate()');
 
 	// assemble URL 
 	const URL = "http://www.bergfex.at/"+self.config.region+"/schneewerte"; 
-	console.log("URL: "+URL);
 
 	request(URL, function (err, response, html) {
 		let $ = cheerio.load(html);
@@ -107,31 +104,31 @@ function parseEntry(row) {
 	return entry;
 }
 
-// function testData() {
-// 	return [
-// 			{ 
-// 				skiarea: 'Gosau - Dachstein West',
-// 				tal: '80 cm',
-// 				berg: '100 cm',
-// 				neu: '10 cm',
-// 				lifte: '32/32',
-// 				update: 'Heute, 08:13' 
-// 			},
-// 			{ 
-// 				skiarea: 'Gerlos - Zillertal',
-// 				tal: '40 cm',
-// 				berg: '70 cm',
-// 				neu: '15 cm',
-// 				lifte: '11/11',
-// 				update: 'Heute, 08:10' 
-// 			},
-// 			{ 
-// 				skiarea: 'Hauser Kaibling',
-// 				tal: '85 cm',
-// 				berg: '70 cm',
-// 				neu: '20 cm',
-// 				lifte: '16/17',
-// 				update: 'Heute, 07:13' 
-// 			},
-// 	];
-// }
+function testData() {
+	return [
+			{ 
+				skiarea: 'Gosau - Dachstein West',
+				tal: '80 cm',
+				berg: '100 cm',
+				neu: '10 cm',
+				lifte: '32/32',
+				update: 'Heute, 08:13' 
+			},
+			{ 
+				skiarea: 'Gerlos - Zillertal',
+				tal: '40 cm',
+				berg: '70 cm',
+				neu: '15 cm',
+				lifte: '11/11',
+				update: 'Heute, 08:10' 
+			},
+			{ 
+				skiarea: 'Hauser Kaibling',
+				tal: '85 cm',
+				berg: '70 cm',
+				neu: '20 cm',
+				lifte: '16/17',
+				update: 'Heute, 07:13' 
+			},
+	];
+}
