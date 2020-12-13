@@ -40,7 +40,7 @@ module.exports = NodeHelper.create({
 	var self = this;
 
 	// assemble URL 
-	const URL = "http://www.bergfex.at/"+self.config.region+"/schneewerte"; 
+	const URL = "http://www.bergfex.at/"+self.config.country+"/schneewerte"; 
 
 	request(URL, function (err, response, html) {
 		let $ = cheerio.load(html);

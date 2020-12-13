@@ -18,7 +18,7 @@ Module.register('MMM-bergfex', {
 	shortenArea: 20,
 	cssclassrow: 'light',
 	cssclassheader: 'normal', 
-	region: 'oesterreich'
+	country: 'oesterreich'
   },
 
     getStyles: function () {
