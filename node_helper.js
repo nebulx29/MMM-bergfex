@@ -11,7 +11,7 @@ const NodeHelper = require("node_helper");
 // var async = require('async');
 // var sys = require('sys');
 // var exec = require('child_process').exec;
-const request = require('request');
+const request = require('request'); 
 const cheerio = require("cheerio");
 
 module.exports = NodeHelper.create({
