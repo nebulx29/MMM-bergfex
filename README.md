@@ -8,7 +8,7 @@ Available countries are listed on Bergfex.at
 
 To use this module, clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/FatTony123/MMM-bergfex.git`
 
-Goto `MMM-bergfex` module directory and run `npm install cheerio` and `npm install`
+Goto `MMM-bergfex` module directory and run `npm install`
 
 
 ### Configuration
