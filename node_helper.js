@@ -39,6 +39,7 @@ module.exports = NodeHelper.create({
 
   retrieveAndUpdate: function() {
 	var self = this;
+	console.log("retrieve and update...");
 
 	// assemble URL 
 	const URL = "http://www.bergfex.at/"+self.config.country+"/schneewerte"; 
