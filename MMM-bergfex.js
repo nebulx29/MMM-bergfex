@@ -16,7 +16,7 @@ Module.register('MMM-bergfex', {
 			'Hochkar',
 		],
 	shortenArea: 20,
-	cssclassrow: 'light',
+	cssclassrow: 'small light',
 	cssclassheader: 'small', 
 	country: 'oesterreich',
 	showUpdateHint: true,
