@@ -17,7 +17,7 @@ Module.register('MMM-bergfex', {
 		],
 	shortenArea: 20,
 	cssclassrow: 'light',
-	cssclassheader: 'normal', 
+	cssclassheader: 'small', 
 	country: 'oesterreich',
 	showUpdateHint: true,
   },
@@ -83,10 +83,9 @@ Module.register('MMM-bergfex', {
 
 	// add update hint 
 	if(this.config.showUpdateHint && this.showHint && this.updateTime !== undefined){
-		Log.log('Showing update hint');
 		var updateHint = document.createElement('div');
 		updateHint.className = 'xsmall dimmed italic'; 
-		updateHint.innerHTML = 'last update at '+this.updateTime+'.'; 
+		updateHint.innerHTML = 'last update fetched at '+this.updateTime+'.'; 
 	
 		setTimeout(function() {
 			updateHint.style.display='none';
