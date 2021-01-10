@@ -38,7 +38,8 @@ Module.register('MMM-bergfex', {
 				update: '' 
 	}];
 	this.hideTime = 30000; // hides update hint after given time 
-	this.status = false; 
+	this.showHint = false; 
+	this.updateTime; 
 
     this.sendSocketNotification('CONFIG', this.config);
   },
@@ -47,6 +48,8 @@ Module.register('MMM-bergfex', {
     // Log.log('MMM-bergfex: socketNotificationReceived ' + notification);
     //Log.log(payload);
     if (notification === 'SNOW_REPORT') {
+		this.showHint = true; 
+		this.updateTime = moment().format('HH:mm:ss');
 		this.snowreports = payload;
 		this.updateDom(this.config.animationSpeed);
     }
@@ -81,20 +84,18 @@ Module.register('MMM-bergfex', {
 	Log.log("status: "+this.status); 
 
 	// add update hint 
-	// if(this.config.showUpdateHint){
-	// 	Log.log('Showing update hint');
-	// 	var updateHint = document.createElement('div');
-	// 	updateHint.className = 'xsmall dimmed italic'; 
-
-	// 	var pollTime = moment().format('HH:mm:ss');
-	// 	updateHint.innerHTML = 'last update at '+pollTime+'.'; 
+	if(this.config.showUpdateHint && this.showHint && this.updateTime !== undefined){
+		Log.log('Showing update hint');
+		var updateHint = document.createElement('div');
+		updateHint.className = 'xsmall dimmed italic'; 
+		updateHint.innerHTML = 'last update at '+this.updateTime+'.'; 
 	
-	// 	setTimeout(function() {
-	// 		updateHint.style.display='none';
-	// 	}, this.hideTime);
+		setTimeout(function() {
+			updateHint.style.display='none';
+		}, this.hideTime);
 	
-	// 	wrapper.appendChild(updateHint);
-	// }
+		wrapper.appendChild(updateHint);
+	}
 
 	return wrapper;
   },

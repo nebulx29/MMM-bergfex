@@ -33,14 +33,12 @@ module.exports = NodeHelper.create({
 		setInterval(function() {
 			self.retrieveAndUpdate();
 			console.log("Triggering update...");
-			self.config.status = true; 
 		}, this.config.updateInterval);
     }
   },
 
   retrieveAndUpdate: function() {
 	var self = this;
-	console.log('fetching updates...');
 
 	// assemble URL 
 	const URL = "http://www.bergfex.at/"+self.config.country+"/schneewerte"; 
