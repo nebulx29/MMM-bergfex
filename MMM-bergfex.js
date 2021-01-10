@@ -77,6 +77,7 @@ Module.register('MMM-bergfex', {
 
 	// add update hint 
 	if(this.config.showUpdateHint){
+		Log.log('Showing update hint');
 		var updateHint = document.createElement('div');
 		updateHint.className = 'xsmall dimmed italic'; 
 

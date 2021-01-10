@@ -32,6 +32,7 @@ module.exports = NodeHelper.create({
 		self.retrieveAndUpdate();
 		setInterval(function() {
 			self.retrieveAndUpdate();
+			console.log("Triggering update...");
 		}, this.config.updateInterval);
     }
   },
