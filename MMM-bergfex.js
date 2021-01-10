@@ -78,20 +78,20 @@ Module.register('MMM-bergfex', {
 	wrapper.appendChild(table);
 
 	// add update hint 
-	if(this.config.showUpdateHint){
-		Log.log('Showing update hint');
-		var updateHint = document.createElement('div');
-		updateHint.className = 'xsmall dimmed italic'; 
+	// if(this.config.showUpdateHint){
+	// 	Log.log('Showing update hint');
+	// 	var updateHint = document.createElement('div');
+	// 	updateHint.className = 'xsmall dimmed italic'; 
 
-		var pollTime = moment().format('HH:mm:ss');
-		updateHint.innerHTML = 'last update at '+pollTime+'.'; 
+	// 	var pollTime = moment().format('HH:mm:ss');
+	// 	updateHint.innerHTML = 'last update at '+pollTime+'.'; 
 	
-		setTimeout(function() {
-			updateHint.style.display='none';
-		}, this.hideTime);
+	// 	setTimeout(function() {
+	// 		updateHint.style.display='none';
+	// 	}, this.hideTime);
 	
-		wrapper.appendChild(updateHint);
-	}
+	// 	wrapper.appendChild(updateHint);
+	// }
 
 	return wrapper;
   },
