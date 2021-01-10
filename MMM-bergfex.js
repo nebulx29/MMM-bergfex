@@ -65,7 +65,7 @@ Module.register('MMM-bergfex', {
 	wrapper.appendChild(header);
 	
     var table = document.createElement('table');
-    table.classList.add("small", "table");
+    table.classList.add("normal", "table");
 
 	var str = "<tr class='" + this.config.cssclassheader + "'><th>Gebiet</th><th>Tal</th><th>Berg</th><th>Neu</th><th>Lifte</th></tr>";
 	for (var i=0; i<this.snowreports.length; i++) {
