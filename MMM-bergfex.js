@@ -18,7 +18,9 @@ Module.register('MMM-bergfex', {
 	shortenArea: 20,
 	cssclassrow: 'light',
 	cssclassheader: 'normal', 
-	country: 'oesterreich'
+	country: 'oesterreich',
+	showUpdateHint: true,
+    pollFrequency: 10 * 60 * 1000, // every 10 minutes 
   },
 
     getStyles: function () {

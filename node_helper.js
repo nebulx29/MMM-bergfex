@@ -9,6 +9,7 @@
 
 // TOOD 
 // replace request module
+// add hint when last update was performed 
 
 const NodeHelper = require("node_helper");
 // var async = require('async');
