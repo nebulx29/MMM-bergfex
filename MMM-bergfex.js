@@ -38,7 +38,7 @@ Module.register('MMM-bergfex', {
 				update: '' 
 	}];
 	this.hideTime = 30000; // hides update hint after given time 
-	
+
     this.sendSocketNotification('CONFIG', this.config);
   },
 
@@ -83,7 +83,7 @@ Module.register('MMM-bergfex', {
 		var updateHint = document.createElement('div');
 		updateHint.className = 'xsmall dimmed italic'; 
 
-		var pollTime = moment().format('HH:mm');
+		var pollTime = moment().format('HH:mm:ss');
 		updateHint.innerHTML = 'last update at '+pollTime+'.'; 
 	
 		setTimeout(function() {
