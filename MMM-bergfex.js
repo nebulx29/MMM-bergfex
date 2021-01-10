@@ -78,6 +78,8 @@ Module.register('MMM-bergfex', {
 	
 	wrapper.appendChild(table);
 
+	Log.log("status: "+this.status); 
+
 	// add update hint 
 	// if(this.config.showUpdateHint){
 	// 	Log.log('Showing update hint');
