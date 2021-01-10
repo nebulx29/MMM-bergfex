@@ -20,7 +20,6 @@ Module.register('MMM-bergfex', {
 	cssclassheader: 'normal', 
 	country: 'oesterreich',
 	showUpdateHint: true,
-    pollFrequency: 10 * 60 * 1000, // every 10 minutes 
   },
 
     getStyles: function () {
@@ -75,6 +74,22 @@ Module.register('MMM-bergfex', {
     table.innerHTML = str;
 	
 	wrapper.appendChild(table);
+
+	// add update hint 
+	if(this.config.showUpdateHint){
+		var updateHint = document.createElement('div');
+		updateHint.className = 'xsmall dimmed italic'; 
+
+		var pollTime = moment().format('HH:mm');
+		updateHint.innerHTML = 'last update at '+pollTime+'.'; 
+	
+		setTimeout(function() {
+			updateHint.style.display='none';
+		}, this.hideTime);
+	
+		wrapper.appendChild(updateHint);
+	}
+
 	return wrapper;
   },
 });
