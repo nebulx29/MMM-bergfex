@@ -38,6 +38,7 @@ Module.register('MMM-bergfex', {
 				update: '' 
 	}];
 	this.hideTime = 30000; // hides update hint after given time 
+	this.status = false; 
 
     this.sendSocketNotification('CONFIG', this.config);
   },
