@@ -8,12 +8,14 @@ Available countries are listed on Bergfex.at
 
 To use this module, clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/FatTony404/MMM-bergfex.git`
 
-Goto `MMM-bergfex` module directory and run `npm install`
+Go to `MMM-bergfex` module directory and run `npm install`. 
 
 
 ### Configuration
 
 The module needs the default configuration block in your config.js to work.
+
+See following example configuration: 
 
 ```
 {
