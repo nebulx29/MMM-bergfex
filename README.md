@@ -1,5 +1,6 @@
 # MMM-bergfex.at
 bergfex.at snow reports retrieved from http://www.bergfex.at/oesterreich/schneewerte/. 
+
 Available countries are listed on Bergfex.at
 
 ![Screenshot](screenshot.png?raw=true "Bergfex.at Results Screenshot")
