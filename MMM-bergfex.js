@@ -5,6 +5,7 @@
  * Apache Licensed.
  */
 
+
 Module.register('MMM-bergfex', {
 
   defaults: {
