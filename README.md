@@ -51,5 +51,5 @@ The following properties can be configured:
 |country|Bergfex.at country. Determines which country is selected when fetching the snow values.<br>**Example:** `country: oesterreich`|String|'oesterreich', 'schweiz'|
 |showUpdateHint|Shows a small hint at the bottom of list mentioning the last performed update time.<br>**Example:** `showUpdateHint: true`|boolean|'true','false'|
 
-#### ToDo
+#### ToDo:
 - Languate translations
