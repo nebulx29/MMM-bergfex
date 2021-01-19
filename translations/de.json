@@ -1,0 +1,17 @@
+{
+	"FETCHING": "Lade Ergebnisse...",
+	"NO_RESULTS": "Keine Ergebnisse für das angegebene Datum vorhanden.", 
+
+	"TOMORROW": "Morgen", 
+	"TODAY": "Heute",
+
+	"CARDBOARD": "Karton", 
+	"CARGOTRAM": "Cargotram", 
+	"ETRAM": "E-Tram", 
+	"ORGANIC": "Organisch", 
+	"PAPER": "Papier", 
+	"SPECIAL": "Spezial", 
+	"TEXTILE": "Textil", 
+	"WASTE": "Restmüll", 
+	"METAL": "Metall"
+}

@@ -23,9 +23,16 @@ Module.register('MMM-bergfex', {
 	showUpdateHint: true,
   },
 
-    getStyles: function () {
-        return ["MMM-bergfex.css"];
-    },  
+	getStyles: function () {
+		return ["MMM-bergfex.css"];
+	},  
+
+	getTranslations: function(){
+		return {
+			en: "translations/en.json", 
+			de: "translations/de.json"
+		}
+	},
   
   // Define start sequence
   start: function() {
@@ -86,7 +93,7 @@ Module.register('MMM-bergfex', {
 	if(this.config.showUpdateHint && this.showHint && this.updateTime !== undefined){
 		var updateHint = document.createElement('div');
 		updateHint.className = 'xsmall dimmed italic'; 
-		updateHint.innerHTML = 'last update fetched at '+this.updateTime+'.'; 
+		updateHint.innerHTML = this.translate("LAST_UPDATE")+' '+this.updateTime+'.'; 
 	
 		setTimeout(function() {
 			updateHint.style.display='none';
