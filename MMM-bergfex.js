@@ -75,7 +75,7 @@ Module.register('MMM-bergfex', {
     var table = document.createElement('table');
     // table.classList.add("small", "table");
 
-	var str = "<tr class='" + this.config.cssclassheader + "'><th>"+this.translate("AREA")+"</th><th>"+this.translate("VALLEY")+"</th><th>"+this.tranlsate("MOUNTAIN")+"</th><th>"+this.translate("NEW")+"</th><th>"+this.translate("LIFTS")+"</th></tr>";
+	var str = "<tr class='" + this.config.cssclassheader + "'><th>"+this.translate("AREA")+"</th><th>"+this.translate("VALLEY")+"</th><th>"+this.translate("MOUNTAIN")+"</th><th>"+this.translate("NEW")+"</th><th>"+this.translate("LIFTS")+"</th></tr>";
 	for (var i=0; i<this.snowreports.length; i++) {
 		str += '<tr>';
 		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '</td>';
