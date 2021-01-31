@@ -53,3 +53,6 @@ The following properties can be configured:
 |cssclassrow|CSS class for the table rows (normal, light, etc).<br>**Example:** `cssclassrow: light`|String|'light'|
 |country|Bergfex.at country. Determines which country is selected when fetching the snow values.<br>**Example:** `country: oesterreich`|String|'oesterreich', 'schweiz'|
 |showUpdateHint|Shows a small hint at the bottom of list mentioning the last performed update time.<br>**Example:** `showUpdateHint: true`|boolean|'true','false'|
+
+### ToDos: 
+- Show update date per entries

@@ -78,11 +78,12 @@ Module.register('MMM-bergfex', {
 	var str = "<tr class='" + this.config.cssclassheader + "'><th>"+this.translate("AREA")+"</th><th>"+this.translate("VALLEY")+"</th><th>"+this.translate("MOUNTAIN")+"</th><th>"+this.translate("NEW")+"</th><th>"+this.translate("LIFTS")+"</th></tr>";
 	for (var i=0; i<this.snowreports.length; i++) {
 		str += '<tr>';
-		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '</td>';
-		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].tal + '</td>';
-		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].berg + '</td>';
-		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].neu + '</td>';
-		str +=  	'<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].lifte + '</td>';
+		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '</td>';
+		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].tal + '</td>';
+		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].berg + '</td>';
+		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].neu + '</td>';
+		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].lifte + '</td>';
+		str += '<td class="'+this.config.cssclassrow+'">'+this.snowreports[i].update+'</td>';
 		str += '</tr>';
 	}
     table.innerHTML = str;
