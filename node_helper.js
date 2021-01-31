@@ -92,15 +92,15 @@ function parseEntry(row) {
 	var td4 = td3.next();
 	var td5 = td4.next();
 	var td6 = td5.next();
-	var td7 = td6.next();
+	// var td7 = td6.next();
 
-	console.log("row: "+td1);
-	console.log("row: "+td2);
-	console.log("row: "+td3);
-	console.log("row: "+td4);
-	console.log("row: "+td5);
-	console.log("row: "+td6);
-	console.log("row: "+td7);
+	// console.log("row: "+td1);
+	// console.log("row: "+td2);
+	// console.log("row: "+td3);
+	// console.log("row: "+td4);
+	// console.log("row: "+td5);
+	// console.log("row: "+td6);
+	// console.log("row: "+td7);
 
 	
 	entry.skiarea = td1.text().trim();
@@ -108,7 +108,7 @@ function parseEntry(row) {
 	entry.berg = td3.text().trim();
 	entry.neu = td4.text().trim();
 	entry.lifte = td5.text().trim();
-	entry.update = td7.text().trim();
+	entry.update = td6.text().trim();
 	
 	return entry;
 }
