@@ -84,7 +84,8 @@ function searchData(snow_reports, skiarea) {
 }
 
 function parseEntry(row) {
-	var entry = {skiarea: "", tal: "", berg: "", neu: "", lifte: "", update: ""};
+	var entry = {skiarea: "", tal: "", berg: "", neu: "", lifte: "", update: ""}; 
+	console.log("update: "+td7.text().trim());
 	
 	var td1 = row.children().first();
 	var td2 = td1.next();
