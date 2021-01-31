@@ -20,7 +20,7 @@ Module.register('MMM-bergfex', {
 	cssclassrow: 'xsmall',
 	cssclassheader: 'small bright', 
 	country: 'oesterreich',
-	showUpdateHint: true,
+	showDate: true,
   },
 
 	getStyles: function () {
@@ -52,7 +52,6 @@ Module.register('MMM-bergfex', {
 	}];
 	this.hideTime = 30000; // hides update hint after given time 
 	this.showHint = false; 
-	this.updateTime; 
 
     this.sendSocketNotification('CONFIG', this.config);
   },
@@ -62,7 +61,6 @@ Module.register('MMM-bergfex', {
     //Log.log(payload);
     if (notification === 'SNOW_REPORT') {
 		this.showHint = true; 
-		this.updateTime = moment().format('HH:mm:ss');
 		this.snowreports = payload;
 		this.updateDom(this.config.animationSpeed);
     }
@@ -90,25 +88,27 @@ Module.register('MMM-bergfex', {
 		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].neu + '</td>';
 		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].lifte + '</td>';
 		// date = moment(date, 'YYYY-MM-DD').format('dddd');
-		str += '<td class="'+this.config.cssclassrow+'">'+moment(this.snowreports[i].update, 'YYYY-MM-DD hh:mm:ss').format('DD.MM.YYYY HH:mm')+'</td>';
+		if(this.config.showDate){
+			str += '<td class="'+this.config.cssclassrow+'">'+moment(this.snowreports[i].update, 'YYYY-MM-DD hh:mm:ss').format('DD.MM.YYYY HH:mm')+'</td>';
+		}
 		str += '</tr>';
 	}
     table.innerHTML = str;
 	
 	wrapper.appendChild(table);
 
-	// add update hint 
-	if(this.config.showUpdateHint && this.showHint && this.updateTime !== undefined){
-		var updateHint = document.createElement('div');
-		updateHint.className = 'xsmall dimmed italic'; 
-		updateHint.innerHTML = this.translate("LAST_UPDATE")+' '+this.updateTime+'.'; 
+	// // add update hint 
+	// if(this.config.showUpdateHint && this.showHint && this.updateTime !== undefined){
+	// 	var updateHint = document.createElement('div');
+	// 	updateHint.className = 'xsmall dimmed italic'; 
+	// 	updateHint.innerHTML = this.translate("LAST_UPDATE")+' '+this.updateTime+'.'; 
 	
-		setTimeout(function() {
-			updateHint.style.display='none';
-		}, this.hideTime);
+	// 	setTimeout(function() {
+	// 		updateHint.style.display='none';
+	// 	}, this.hideTime);
 	
-		wrapper.appendChild(updateHint);
-	}
+	// 	wrapper.appendChild(updateHint);
+	// }
 
 	return wrapper;
   },
