@@ -94,7 +94,7 @@ function parseEntry(row) {
 	var td6 = td5.next();
 	var td7 = td6.next();
 
-	console.log("update: "+td7.text().trim());
+	console.log("update: "+row.children().first());
 	
 	entry.skiarea = td1.text().trim();
 	entry.tal = td2.text().trim();
