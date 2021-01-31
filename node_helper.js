@@ -104,7 +104,7 @@ function parseEntry(row) {
 	entry.berg = td3.text().trim();
 	entry.neu = td4.text().trim();
 	entry.lifte = td5.text().trim();
-	entry.update = td6.text().trim();
+	entry.update = td6.attr('data-value').trim();
 	
 	return entry;
 }
