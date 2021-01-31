@@ -33,6 +33,11 @@ Module.register('MMM-bergfex', {
 			de: "translations/de.json"
 		}
 	},
+
+	// define required scripts
+	getScripts: function(){
+		return ["moment.js"]
+	},
   
   // Define start sequence
   start: function() {
@@ -84,6 +89,7 @@ Module.register('MMM-bergfex', {
 		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].berg + '</td>';
 		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].neu + '</td>';
 		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].lifte + '</td>';
+		// date = moment(date, 'YYYY-MM-DD').format('dddd');
 		str += '<td class="'+this.config.cssclassrow+'">'+this.snowreports[i].update+'</td>';
 		str += '</tr>';
 	}
