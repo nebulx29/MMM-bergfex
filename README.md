@@ -3,7 +3,8 @@ bergfex.at snow reports retrieved from http://www.bergfex.at/oesterreich/schneew
 
 Available countries are listed on Bergfex.at
 
-![Screenshot](screenshot.png "Bergfex.at Results Screenshot")
+<!-- ![Screenshot](screenshot.png "Bergfex.at Results Screenshot") -->
+<img src="screenshot.png" width="50%" alt="Bergfex.at results screenshot">
 
 ### Download and Installation 
 
