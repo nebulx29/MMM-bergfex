@@ -90,7 +90,7 @@ Module.register('MMM-bergfex', {
 		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].neu + '</td>';
 		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].lifte + '</td>';
 		// date = moment(date, 'YYYY-MM-DD').format('dddd');
-		str += '<td class="'+this.config.cssclassrow+'">'+moment(this.snowreports[i].update, 'YYYY-MM-DD').format('dddd, DD.MM.YYYY')+'</td>';
+		str += '<td class="'+this.config.cssclassrow+'">'+moment(this.snowreports[i].update, 'YYYY-MM-DD').format('DD.MM.YYYY HH:mm')+'</td>';
 		str += '</tr>';
 	}
     table.innerHTML = str;
