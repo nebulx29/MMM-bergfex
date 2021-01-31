@@ -91,7 +91,6 @@ Module.register('MMM-bergfex', {
 		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].berg + '</td>';
 		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].neu + '</td>';
 		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].lifte + '</td>';
-		// date = moment(date, 'YYYY-MM-DD').format('dddd');
 		if(this.config.showDate){
 			str += '<td class="'+this.config.cssclassrow+'">'+moment(this.snowreports[i].update, 'YYYY-MM-DD hh:mm:ss').format('DD.MM.YYYY HH:mm')+'</td>';
 		}
@@ -100,19 +99,6 @@ Module.register('MMM-bergfex', {
     table.innerHTML = str;
 	
 	wrapper.appendChild(table);
-
-	// // add update hint 
-	// if(this.config.showUpdateHint && this.showHint && this.updateTime !== undefined){
-	// 	var updateHint = document.createElement('div');
-	// 	updateHint.className = 'xsmall dimmed italic'; 
-	// 	updateHint.innerHTML = this.translate("LAST_UPDATE")+' '+this.updateTime+'.'; 
-	
-	// 	setTimeout(function() {
-	// 		updateHint.style.display='none';
-	// 	}, this.hideTime);
-	
-	// 	wrapper.appendChild(updateHint);
-	// }
 
 	return wrapper;
   },
