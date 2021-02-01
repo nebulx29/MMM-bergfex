@@ -7,14 +7,8 @@
  * Apache 2.0 Licensed.
  */
 
-// TOOD 
-// replace request module
-// add hint when last update was performed 
 
 const NodeHelper = require("node_helper");
-// var async = require('async');
-// var sys = require('sys');
-// var exec = require('child_process').exec;
 const request = require('request'); 
 const cheerio = require("cheerio");
 
