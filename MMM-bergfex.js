@@ -1,10 +1,3 @@
-/* Magic Mirror
- * Module: MMM-bergfex
- *
- * By Juergen Wolf-Hofer
- * Apache Licensed.
- */
-
 
 Module.register('MMM-bergfex', {
 
@@ -18,7 +11,7 @@ Module.register('MMM-bergfex', {
 		],
 	shortenArea: 20,
 	cssclassrow: 'xsmall',
-	cssclassheader: 'small bright', 
+	cssclassheader: 'xsmall bright', 
 	country: 'oesterreich',
 	showDate: false,
   },

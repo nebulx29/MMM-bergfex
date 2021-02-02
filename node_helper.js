@@ -1,13 +1,5 @@
 'use strict';
 
-/* Magic Mirror
- * Module: MMM-bergfex
- *
- * By Juergen Wolf-Hofer
- * Apache 2.0 Licensed.
- */
-
-
 const NodeHelper = require("node_helper");
 const request = require('request'); 
 const cheerio = require("cheerio");
