@@ -74,7 +74,7 @@ Module.register('MMM-bergfex', {
 	var str = "<tr class='" + this.config.cssclassheader + "'><th>"+this.translate("AREA")+"</th><th>"+this.translate("VALLEY")+"</th><th>"+this.translate("MOUNTAIN")+"</th><th>"+this.translate("NEW")+
 	"</th><th>"+this.translate("LIFTS")+"</th>";
 	if(this.config.showDate){
-		str += "<th>Update</td>";
+		str += "<th>"+this.translate("UPDATE")+"</td>";
 	}
 	str += "</tr>";
 	for (var i=0; i<this.snowreports.length; i++) {

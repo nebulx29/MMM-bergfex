@@ -1,8 +1,8 @@
 {
-	"LAST_UPDATE": "last update fetched at ",
 	"AREA": "Area", 
 	"VALLEY": "Valley", 
 	"MOUNTAIN": "Mountain", 
 	"NEW": "New", 
-	"LIFTS": "Lifts"
+	"LIFTS": "Lifts",
+	"UPDATE": "Updated"
 }

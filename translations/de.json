@@ -1,8 +1,8 @@
 {
-	"LAST_UPDATE": "Letztes Update um ",
 	"AREA": "Gebiet", 
 	"VALLEY": "Tal", 
 	"MOUNTAIN": "Berg", 
 	"NEW": "Neu", 
-	"LIFTS": "Lifte"
+	"LIFTS": "Lifte",
+	"UPDATE": "Aktualisiert"
 }
