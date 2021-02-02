@@ -20,7 +20,7 @@ Module.register('MMM-bergfex', {
 	cssclassrow: 'xsmall',
 	cssclassheader: 'small bright', 
 	country: 'oesterreich',
-	showDate: true,
+	showDate: false,
   },
 
 	getStyles: function () {
