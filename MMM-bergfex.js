@@ -10,8 +10,8 @@ Module.register('MMM-bergfex', {
 			'Hochkar',
 		],
 	shortenArea: 20,
-	cssclassrow: 'xsmall',
-	cssclassheader: 'xsmall bright', 
+	cssClassRow: 'xsmall',
+	cssClassHeader: 'xsmall bright', 
 	country: 'oesterreich',
 	showDate: false,
   },
@@ -71,7 +71,7 @@ Module.register('MMM-bergfex', {
     var table = document.createElement('table');
     // table.classList.add("small", "table");
 
-	var str = "<tr class='" + this.config.cssclassheader + "'><th>"+this.translate("AREA")+"</th><th>"+this.translate("VALLEY")+"</th><th>"+this.translate("MOUNTAIN")+"</th><th>"+this.translate("NEW")+
+	var str = "<tr class='" + this.config.cssClassHeader + "'><th>"+this.translate("AREA")+"</th><th>"+this.translate("VALLEY")+"</th><th>"+this.translate("MOUNTAIN")+"</th><th>"+this.translate("NEW")+
 	"</th><th>"+this.translate("LIFTS")+"</th>";
 	if(this.config.showDate){
 		str += "<th>"+this.translate("UPDATE")+"</td>";
@@ -79,13 +79,13 @@ Module.register('MMM-bergfex', {
 	str += "</tr>";
 	for (var i=0; i<this.snowreports.length; i++) {
 		str += '<tr>';
-		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '</td>';
-		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].tal + '</td>';
-		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].berg + '</td>';
-		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].neu + '</td>';
-		str += '<td class="' + this.config.cssclassrow + '">' + this.snowreports[i].lifte + '</td>';
+		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '</td>';
+		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].tal + '</td>';
+		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].berg + '</td>';
+		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].neu + '</td>';
+		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].lifte + '</td>';
 		if(this.config.showDate){
-			str += '<td class="'+this.config.cssclassrow+'">'+moment(this.snowreports[i].update, 'YYYY-MM-DD hh:mm:ss').format('DD.MM.YYYY HH:mm')+'</td>';
+			str += '<td class="'+this.config.cssClassRow+'">'+moment(this.snowreports[i].update, 'YYYY-MM-DD hh:mm:ss').format('DD.MM.YYYY HH:mm')+'</td>';
 		}
 		str += '</tr>';
 	}
