@@ -9,6 +9,7 @@
 
 .MMM-bergfex td {
 	padding-right: 20px; 
+	min-width: 35px; 
 }
 
 .italic {
