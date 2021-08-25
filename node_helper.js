@@ -66,7 +66,10 @@ function searchData(snow_reports, skiarea) {
 		if (snow_reports[i].skiarea === skiarea) {
 			console.log("testing output");
 			return snow_reports[i];
+		} else {
+			console.log("testing output two");
 		}
+		
 	}
 	return null;
 }
