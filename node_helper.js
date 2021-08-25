@@ -62,6 +62,8 @@ module.exports = NodeHelper.create({
 
 
 function searchData(snow_reports, skiarea) {
+	console.log(snow_reports.length);
+
 	for (var i=0; i<snow_reports.length; i++) {
 		if (snow_reports[i].skiarea === skiarea) {
 			return snow_reports[i];
