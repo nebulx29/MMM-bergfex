@@ -68,17 +68,18 @@ Module.register('MMM-bergfex', {
     header.appendChild(name);
 	wrapper.appendChild(header);
 	
-    var table = document.createElement('table');
-    // table.classList.add("small", "table");
-
-	var str = "<tr class='" + this.config.cssClassHeader + "'><th>"+this.translate("AREA")+"</th><th>"+this.translate("VALLEY")+"</th><th>"+this.translate("MOUNTAIN")+"</th><th>"+this.translate("NEW")+
-	"</th><th>"+this.translate("LIFTS")+"</th>";
-	if(this.config.showDate){
-		str += "<th>"+this.translate("UPDATE")+"</td>";
-	}
-	str += "</tr>";
 
 	if(this.snowreports.length != 0){
+		var table = document.createElement('table');
+		// table.classList.add("small", "table");
+	
+		var str = "<tr class='" + this.config.cssClassHeader + "'><th>"+this.translate("AREA")+"</th><th>"+this.translate("VALLEY")+"</th><th>"+this.translate("MOUNTAIN")+"</th><th>"+this.translate("NEW")+
+		"</th><th>"+this.translate("LIFTS")+"</th>";
+		if(this.config.showDate){
+			str += "<th>"+this.translate("UPDATE")+"</td>";
+		}
+		str += "</tr>";
+
 		for (var i=0; i<this.snowreports.length; i++) {
 			str += '<tr>';
 			str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '</td>';
@@ -89,17 +90,15 @@ Module.register('MMM-bergfex', {
 			if(this.config.showDate){
 				str += '<td class="'+this.config.cssClassRow+'">'+moment(this.snowreports[i].update, 'YYYY-MM-DD hh:mm:ss').format('DD.MM.YYYY HH:mm')+'</td>';
 			}
-			str += '</tr>';
+			str += '</tr>';	
 		}
+		table.innerHTML = str;
+		wrapper.appendChild(table);
 	} else {
-		str += '<tr>';
-		str += '<td colspan="2" class="' + this.config.cssClassRow + '">'+this.translate("NOENTRIES")+'</td>';
-		str += '</tr>';
-	}
-	table.innerHTML = str;
-
-	
-	wrapper.appendChild(table);
+		var noElements = document.createElement("div"); 
+		noElements.innerHTML = this.translate("NOENTRIES");
+		wrapper.append(noElements);
+	} 
 
 	return wrapper;
   },
