@@ -70,6 +70,7 @@ Module.register('MMM-bergfex', {
 	
 
 	if(this.snowreports.length != 0){
+		Log.log("TEST");
 		var table = document.createElement('table');
 		// table.classList.add("small", "table");
 	
@@ -103,4 +104,5 @@ Module.register('MMM-bergfex', {
 
 	return wrapper;
   },
+
 });
