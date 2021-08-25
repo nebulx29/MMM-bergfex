@@ -52,12 +52,12 @@ module.exports = NodeHelper.create({
 			selSnowReports.push(searchData(allSnowReports, self.config.skiareas[i]));
 		}
 
-		var filtered = selSnowReports.filter(function (el) {
+		var selSnowReportsFiltered = selSnowReports.filter(function (el) {
 			return el != null;
 		  });
-		console.log(filtered);
+		// console.log(filtered);
 		
-		self.sendSocketNotification('SNOW_REPORT', selSnowReports);
+		self.sendSocketNotification('SNOW_REPORT', selSnowReportsFiltered);
 	});
 	
   }
