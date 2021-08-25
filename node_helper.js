@@ -67,7 +67,7 @@ function searchData(snow_reports, skiarea) {
 			console.log("testing output");
 			return snow_reports[i];
 		} else {
-			console.log("testing output two");
+			return null; 
 		}
 	}
 	// return null;
