@@ -36,12 +36,12 @@ Module.register('MMM-bergfex', {
   start: function() {
     Log.log('Starting module: ' + this.name);
 	this.snowreports = [{
-				skiarea: '',
-				tal: '',
-				berg: '',
-				neu: '',
-				lifte: '',
-				update: '' 
+				// skiarea: '',
+				// tal: '',
+				// berg: '',
+				// neu: '',
+				// lifte: '',
+				// update: '' 
 	}];
 	this.hideTime = 30000; // hides update hint after given time 
 	this.showHint = false; 
