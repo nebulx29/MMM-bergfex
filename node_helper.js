@@ -47,10 +47,10 @@ module.exports = NodeHelper.create({
 		console.log(allSnowReports.length + " snow reports from bergfex.at retrieved.");
 
 		var selSnowReports = [];
-		for (var i=0; i<self.config.skiareas.length; i++) {
+		// for (var i=0; i<self.config.skiareas.length; i++) {
 			// console.log("searching for " + self.config.skiareas[i]);
 			selSnowReports.push(searchData(allSnowReports, self.config.skiareas[i]));
-		}
+		// }
 		console.log(selSnowReports);
 		
 		self.sendSocketNotification('SNOW_REPORT', selSnowReports);
@@ -69,7 +69,6 @@ function searchData(snow_reports, skiarea) {
 		} else {
 			console.log("testing output two");
 		}
-		
 	}
 	return null;
 }
