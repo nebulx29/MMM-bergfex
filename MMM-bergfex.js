@@ -55,6 +55,7 @@ Module.register('MMM-bergfex', {
     if (notification === 'SNOW_REPORT') {
 		this.showHint = true; 
 		this.snowreports = payload;
+		Log.log("reports "+this.snowreports);
 		this.updateDom(this.config.animationSpeed);
     }
   },
