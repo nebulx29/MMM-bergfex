@@ -69,7 +69,7 @@ Module.register('MMM-bergfex', {
 	wrapper.appendChild(header);
 	
 	Log.log("SNOWreport "+this.snowreports.length);
-	if(this.snowreports.length > 1){
+	if(this.snowreports.length > 0){
 		Log.log("TEST");
 		var table = document.createElement('table');
 		// table.classList.add("small", "table");
