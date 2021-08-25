@@ -36,12 +36,12 @@ Module.register('MMM-bergfex', {
   start: function() {
     Log.log('Starting module: ' + this.name);
 	this.snowreports = [{
-				skiarea: '',
-				tal: '',
-				berg: '',
-				neu: '',
-				lifte: '',
-				update: '' 
+		skiarea: '',
+		tal: '',
+		berg: '',
+		neu: '',
+		lifte: '',
+		update: '' 
 	}];
 	this.hideTime = 30000; // hides update hint after given time 
 	this.showHint = false; 
@@ -68,9 +68,8 @@ Module.register('MMM-bergfex', {
     header.appendChild(name);
 	wrapper.appendChild(header);
 	
-
+	Log.log("SNOWreport "+this.snowreports.length);
 	if(this.snowreports.length > 1){
-		Log.log("SNOWreport "+this.snowreports.length);
 		Log.log("TEST");
 		var table = document.createElement('table');
 		// table.classList.add("small", "table");
