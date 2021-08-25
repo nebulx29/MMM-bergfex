@@ -70,7 +70,13 @@ Module.register('MMM-bergfex', {
 	wrapper.appendChild(header);
 	
 	Log.log("SNOWreport "+this.snowreports.length);
-	if(this.snowreports.length != 0){
+	if(this.snowreports.length == 0){
+		var loading = document.createElement("div"); 
+		loading.className = this.config.cssClassRow;
+		loading.innerHTML = this.translate("LOADING");
+		wrapper.append(loading);
+	}
+	else if(this.snowreports.length != 0){
 		Log.log("TEST");
 		var table = document.createElement('table');
 		// table.classList.add("small", "table");
