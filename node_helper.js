@@ -63,10 +63,10 @@ module.exports = NodeHelper.create({
 
 function searchData(snow_reports, skiarea) {
 	for (var i=0; i<snow_reports.length; i++) {
-		
-		console.log(snow_reports[i].skiarea);
-
 		if (snow_reports[i].skiarea === skiarea) {
+
+			console.log("snow reports "+snow_reports[i]);
+
 			return snow_reports[i];
 		}
 	}
