@@ -78,6 +78,9 @@ Module.register('MMM-bergfex', {
 		str += "<th>"+this.translate("UPDATE")+"</td>";
 	}
 	str += "</tr>";
+	
+	Log.log(this.snowreports.length);
+
 	for (var i=0; i<this.snowreports.length; i++) {
 		str += '<tr>';
 		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '</td>';
