@@ -4,5 +4,6 @@
 	"MOUNTAIN": "Mountain", 
 	"NEW": "New", 
 	"LIFTS": "Lifts",
-	"UPDATE": "Updated at"
+	"UPDATE": "Updated at", 
+	"NOENTRIES": "No matching entries found."
 }

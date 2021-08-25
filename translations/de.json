@@ -4,5 +4,6 @@
 	"MOUNTAIN": "Berg", 
 	"NEW": "Neu", 
 	"LIFTS": "Lifte",
-	"UPDATE": "Aktualisiert am"
+	"UPDATE": "Aktualisiert am", 
+	"NOENTRIES": "Keine passenden Einträge gefunden"
 }
