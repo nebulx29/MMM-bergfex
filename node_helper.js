@@ -45,9 +45,10 @@ module.exports = NodeHelper.create({
 		});
 
 		console.log(allSnowReports.length + " snow reports from bergfex.at retrieved.");
+
 		var selSnowReports = [];
 		for (var i=0; i<self.config.skiareas.length; i++) {
-			console.log("searching for " + self.config.skiareas[i]);
+			// console.log("searching for " + self.config.skiareas[i]);
 			selSnowReports.push(searchData(allSnowReports, self.config.skiareas[i]));
 		}
 		console.log(selSnowReports);
@@ -61,9 +62,12 @@ module.exports = NodeHelper.create({
 
 
 function searchData(snow_reports, skiarea) {
+	console.log(snow_reports.length);
+	console.log(skiarea);
+
+
 	for (var i=0; i<snow_reports.length; i++) {
 		if (snow_reports[i].skiarea === skiarea) {
-			console.log("Skiareas: "+snow_reports[i]);
 			return snow_reports[i];
 		}
 	}
