@@ -77,22 +77,25 @@ Module.register('MMM-bergfex', {
 		str += "<th>"+this.translate("UPDATE")+"</td>";
 	}
 	str += "</tr>";
-	
-	Log.log(this.snowreports.length);
 
-	for (var i=0; i<this.snowreports.length; i++) {
-		str += '<tr>';
-		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '</td>';
-		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].tal + '</td>';
-		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].berg + '</td>';
-		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].neu + '</td>';
-		str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].lifte + '</td>';
-		if(this.config.showDate){
-			str += '<td class="'+this.config.cssClassRow+'">'+moment(this.snowreports[i].update, 'YYYY-MM-DD hh:mm:ss').format('DD.MM.YYYY HH:mm')+'</td>';
+	if(this.snowreports.length != 0){
+		for (var i=0; i<this.snowreports.length; i++) {
+			str += '<tr>';
+			str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].skiarea.substring(0,this.config.shortenArea) + '</td>';
+			str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].tal + '</td>';
+			str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].berg + '</td>';
+			str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].neu + '</td>';
+			str += '<td class="' + this.config.cssClassRow + '">' + this.snowreports[i].lifte + '</td>';
+			if(this.config.showDate){
+				str += '<td class="'+this.config.cssClassRow+'">'+moment(this.snowreports[i].update, 'YYYY-MM-DD hh:mm:ss').format('DD.MM.YYYY HH:mm')+'</td>';
+			}
+			str += '</tr>';
 		}
-		str += '</tr>';
+	} else {
+		str += "No entries found.";
 	}
-    table.innerHTML = str;
+	table.innerHTML = str;
+
 	
 	wrapper.appendChild(table);
 
