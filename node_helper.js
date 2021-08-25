@@ -51,7 +51,11 @@ module.exports = NodeHelper.create({
 			// console.log("searching for " + self.config.skiareas[i]);
 			selSnowReports.push(searchData(allSnowReports, self.config.skiareas[i]));
 		}
-		console.log(selSnowReports);
+
+		var filtered = selSnowReports.filter(function (el) {
+			return el != null;
+		  });
+		console.log(filtered);
 		
 		self.sendSocketNotification('SNOW_REPORT', selSnowReports);
 	});

@@ -36,7 +36,7 @@ Module.register('MMM-bergfex', {
   start: function() {
     Log.log('Starting module: ' + this.name);
 	this.snowreports = [{
-				skiarea: 'loading...',
+				skiarea: '',
 				tal: '',
 				berg: '',
 				neu: '',
