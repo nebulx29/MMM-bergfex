@@ -93,6 +93,7 @@ Module.register('MMM-bergfex', {
 		}
 	} else {
 		str += '<tr>';
+		str += '<td></td>';
 		str += '<td class="' + this.config.cssClassRow + '">No entries found.</td>';
 		str += '</tr>';
 	}
