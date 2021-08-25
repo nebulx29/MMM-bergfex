@@ -56,7 +56,7 @@ Module.register('MMM-bergfex', {
 		this.showHint = true; 
 		this.snowreports = payload;
 		Log.log("reports "+this.snowreports.length);
-		// this.updateDom(this.config.animationSpeed);
+		this.updateDom(this.config.animationSpeed);
     }
   },
 
