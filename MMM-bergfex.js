@@ -96,6 +96,7 @@ Module.register('MMM-bergfex', {
 		wrapper.appendChild(table);
 	} else {
 		var noElements = document.createElement("div"); 
+		noElements.className = this.config.cssClassRow;
 		noElements.innerHTML = this.translate("NOENTRIES");
 		wrapper.append(noElements);
 	} 
