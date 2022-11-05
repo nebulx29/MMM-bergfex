@@ -3,11 +3,15 @@
 	font-size: 18px;
 }
 
-.MMM-bergfex .key {
-	/*font-weight: bold;*/
+.MMM-bergfex th {
+	padding-right: 20px; 
 }
 
-.MMM-bergfex .value {
-    /*font-style: italic;*/
+.MMM-bergfex td {
+	padding-right: 20px; 
+	min-width: 35px; 
 }
 
+.italic {
+    font-style: italic;
+}

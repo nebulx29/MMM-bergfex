@@ -1,26 +1,29 @@
 {
-  "name": "MMM-bergfex",
-  "description": "Displays Bergfex.at Snow Reports",
+  "name": "mmm-bergfex",
+  "version": "1.0.0",
+  "description": "MagicMirror Module to show snow reports from bergfex.at",
+  "main": "MMM-bergfex.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nebulx29/MMM-bergfex"
+    "url": "git+https://github.com/FatTony123/MMM-bergfex.git"
   },
   "keywords": [
     "Bergfex",
-    "weather forecast",
-    "snow forecast",
-	"skiing",
-	"austria"
+    "weather",
+    "forecast",
+    "snow",
+    "forecast",
+    "skiing",
+    "snowboarding"
   ],
-  "author": "nebulx29",
-  "license": "Apache 2.0",
+  "author": "FatTony123",
+  "license": "Apache-2.0",
   "bugs": {
-    "url": "https://github.com/nebulx29/MMM-bergfex/issues"
+    "url": "https://github.com/FatTony123/MMM-bergfex/issues"
   },
-  "homepage": "https://github.com/nebulx29/MMM-bergfex",
+  "homepage": "https://github.com/FatTony123/MMM-bergfex#readme",
   "dependencies": {
-    "request": "latest",
-    "cheerio": "latest"
+    "cheerio": "^1.0.0-rc.5",
+    "request": "^2.88.2"
   }
-
 }

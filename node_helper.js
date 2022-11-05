@@ -1,21 +1,8 @@
 'use strict';
 
-/* Magic Mirror
- * Module: MMM-bergfex
- *
- * By Juergen Wolf-Hofer
- * Apache 2.0 Licensed.
- */
-
-const NodeHelper = require('node_helper');
-var async = require('async');
-var sys = require('sys');
-var exec = require('child_process').exec;
-const request = require('request');
+const NodeHelper = require("node_helper");
+const request = require('request'); 
 const cheerio = require("cheerio");
-
-// Constants
-const URL = "http://www.bergfex.at/oesterreich/schneewerte/";
 
 module.exports = NodeHelper.create({
 
@@ -37,7 +24,9 @@ module.exports = NodeHelper.create({
 
   retrieveAndUpdate: function() {
 	var self = this;
-	console.log('retrieveAndUpdate()');
+
+	// assemble URL 
+	const URL = "http://www.bergfex.at/"+self.config.country+"/schneewerte"; 
 
 	request(URL, function (err, response, html) {
 		let $ = cheerio.load(html);
@@ -56,14 +45,17 @@ module.exports = NodeHelper.create({
 		});
 
 		console.log(allSnowReports.length + " snow reports from bergfex.at retrieved.");
+
 		var selSnowReports = [];
 		for (var i=0; i<self.config.skiareas.length; i++) {
-			console.log("searching for " + self.config.skiareas[i]);
 			selSnowReports.push(searchData(allSnowReports, self.config.skiareas[i]));
 		}
-		console.log(selSnowReports);
+
+		var selSnowReportsFiltered = selSnowReports.filter(function (el) {
+			return el != null;
+		  });
 		
-		self.sendSocketNotification('SNOW_REPORT', selSnowReports);
+		self.sendSocketNotification('SNOW_REPORT', selSnowReportsFiltered);
 	});
 	
   }
@@ -75,57 +67,27 @@ function searchData(snow_reports, skiarea) {
 	for (var i=0; i<snow_reports.length; i++) {
 		if (snow_reports[i].skiarea === skiarea) {
 			return snow_reports[i];
-		}
+		} 
 	}
-	return null;
 }
 
 function parseEntry(row) {
-	var entry = {skiarea: "", tal: "", berg: "", neu: "", lifte: ""};
-	
+	var entry = {skiarea: "", tal: "", berg: "", neu: "", lifte: "", update: ""}; 
+
 	var td1 = row.children().first();
 	var td2 = td1.next();
 	var td3 = td2.next();
 	var td4 = td3.next();
 	var td5 = td4.next();
 	var td6 = td5.next();
-	var td7 = td6.next();
-	
+	// var td7 = td6.next();
+
 	entry.skiarea = td1.text().trim();
 	entry.tal = td2.text().trim();
 	entry.berg = td3.text().trim();
 	entry.neu = td4.text().trim();
 	entry.lifte = td5.text().trim();
-	entry.update = td7.text().trim();
+	entry.update = td6.attr('data-value').trim();
 	
 	return entry;
-}
-
-function testData() {
-	return [
-			{ 
-				skiarea: 'Gosau - Dachstein West',
-				tal: '80 cm',
-				berg: '100 cm',
-				neu: '10 cm',
-				lifte: '32/32',
-				update: 'Heute, 08:13' 
-			},
-			{ 
-				skiarea: 'Gerlos - Zillertal',
-				tal: '40 cm',
-				berg: '70 cm',
-				neu: '15 cm',
-				lifte: '11/11',
-				update: 'Heute, 08:10' 
-			},
-			{ 
-				skiarea: 'Hauser Kaibling',
-				tal: '85 cm',
-				berg: '70 cm',
-				neu: '20 cm',
-				lifte: '16/17',
-				update: 'Heute, 07:13' 
-			},
-	];
 }

@@ -1,21 +1,22 @@
 # MMM-bergfex.at
-bergfex.at snow reports Austria retrieved from http://www.bergfex.at/oesterreich/schneewerte/
+bergfex.at snow reports retrieved from http://www.bergfex.at/oesterreich/schneewerte/. 
 
-### Prerequisites
+Available countries are listed on Bergfex.at
 
-- tested only on MagicMirror v2.0.0
-
+<img src="screenshot.png" width="50%" alt="Bergfex.at results screenshot">
 
 ### Download and Installation 
 
-To use this module, clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/nebulx29/MMM-bergfex`
+To use this module, clone this repository to your __modules__ folder of your MagicMirror: `git clone https://github.com/FatTony404/MMM-bergfex.git`
 
-Goto `MMM-bergfex` module directory and run `npm install cheerio` and `npm install`
+Go to `MMM-bergfex` module directory and run `npm install`. 
 
 
 ### Configuration
 
 The module needs the default configuration block in your config.js to work.
+
+See following example configuration: 
 
 ```
 {
@@ -32,7 +33,9 @@ The module needs the default configuration block in your config.js to work.
 		],
 		shortenArea: 20,
 		cssclassrow: 'normal',
-		cssclassheader: 'bright'				
+		cssclassheader: 'bright',
+		country: 'oesterreich',	
+		showUpdateHint: true,			
 	}
 },
 ```
@@ -48,4 +51,5 @@ The following properties can be configured:
 |shortenArea|number of characters skiarea names will be shortened to.<br>**Example:** `shortenArea: 20`|int|20|
 |cssclassheader|CSS class for the table header (bright, normal, etc).<br>**Example:** `cssclassheader: normal`|String|'normal'|
 |cssclassrow|CSS class for the table rows (normal, light, etc).<br>**Example:** `cssclassrow: light`|String|'light'|
-
+|country|Bergfex.at country. Determines which country is selected when fetching the snow values.<br>**Example:** `country: oesterreich`|String|'oesterreich', 'schweiz'|
+|showDate|Shows the update time.<br>**Example:** `showDate: true`|boolean|'true','false'|
